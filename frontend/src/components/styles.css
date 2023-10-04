@@ -1,0 +1,8 @@
+.messages {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    /* border: 2px solid black; */
+    height: 100%;
+}
