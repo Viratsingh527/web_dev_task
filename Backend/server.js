@@ -20,23 +20,6 @@ app.use('/api/user', userRouter)
 app.use('/api/message', messageRouter)
 app.use('/api/chat', chatRouter)
 
-// ------------deloyment----------------
-const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname1, '/frontend/build')))
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname1, 'frontend', 'build', 'index.html'))
-
-    })
-}
-else {
-    app.get('/', (req, res) => {
-        res.send("App is successefully runninng")
-    })
-
-}
-// ------------deloyment----------------
-
 app.use(Notfound)
 app.use(ErrorHandler)
 
