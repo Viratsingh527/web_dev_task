@@ -32,6 +32,9 @@ const server = app.listen(PORT, () => {
 const io = require('socket.io')(server, {
     pingTimeout: 6000000,
     cors: {
+        // Configure CORS to allow the backend socket to connect with the frontend socket
+        // This is necessary when the frontend and backend are running on different ports
+        // In this case, the frontend is running on http://localhost:3000
         origin: "http://localhost:3000",
     }
 })
