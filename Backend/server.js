@@ -11,7 +11,9 @@ const messageRouter = require('./Routes/messageRouter')
 const { Notfound, ErrorHandler } = require("./middleware/errormidleware");
 const chatRouter = require('./Routes/chatRouter');
 connectDB();
+var cors = require('cors')
 
+app.use(cors()) // Use this after the variable declaration
 
 
 
